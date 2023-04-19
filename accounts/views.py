@@ -20,3 +20,8 @@ def login_user(request):
         form = LoginForm()
     context = {"form": form}
     return render(request, "accounts/login.html", context)
+
+
+def logout_user(request):
+    logout(request)
+    return redirect("login")
